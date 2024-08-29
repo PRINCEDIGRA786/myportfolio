@@ -1,14 +1,3 @@
-// /** @type {import('tailwindcss').Config} */
-// module.exports = {
-//   content: [
-//     "./src/**/*.{js,jsx,ts,tsx}",
-//   ],
-//   theme: {
-//     extend: {},
-//   },
-//   plugins: [],
-// }
-// tailwind.config.js
 module.exports = {
   //...
   content: [
@@ -25,7 +14,12 @@ module.exports = {
       animation: {
         fadeIn: 'fadeIn 0.5s ease-out forwards',
       },
+      screens: {
+        phone: { 'min': '200px', 'max': '500px' },
+        bigphone: { 'min': '500px', 'max': '640px' },
+      },
     },
   },
   plugins: [],
 }
+

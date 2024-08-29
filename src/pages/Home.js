@@ -9,7 +9,7 @@ import Form from '../components/Form';
 
 export default function Home() {
 
-    const resumeLink = `${process.env.PUBLIC_URL}/resume.pdf`;
+    const resumeLink = `${process.env.PUBLIC_URL}/Prince_RESUME.pdf`;
     const [visibleCards, setVisibleCards] = useState({ leftCards: 0, rightCards: 0 });
     const [displayText, setDisplayText] = useState("");
     const textArray = ["Hi!", "I", "am", "Prince,", "Web", "Developer"];
@@ -114,7 +114,12 @@ export default function Home() {
 
                 {/* Existing code for background, logo, and navigation */}
                 <div>
-                    <img src="https://wallpapercave.com/wp/JkkMS9Q.jpg" alt="Loading" className='h-[115vh] brightness-100 contrast-200 w-[100vw]' />
+                    <img
+                        //  src="https://wallpapercave.com/wp/JkkMS9Q.jpg" 
+                        // src='https://i.ytimg.com/vi/sEtAzSM5HM4/maxresdefault.jpg'
+                        src='https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQdM5rYkVpcnez448qtgX015UMFckaqwH2Vc6EZ0ymiv8DLWLfoPGf4jt4Dx6PhqsLikbY&usqp=CAU'
+                        alt="Loading"
+                        className='h-[115vh] phone:h-96 bigphone:h-96 brightness-150 contrast-200 w-[100vw]' />
                 </div>
                 <div className='fixed z-50 bg-black w-[100vw]  top-0 pl-10 md:flex space-x-10 hidden '>
                     <div>
@@ -142,8 +147,9 @@ export default function Home() {
                      hover:bg-slate-400 mt-1 w-40 duration-700 transition-all' onClick={() => scrollToSection(formref)}>Let's Connect</button>
                 </div>
                 <h1 className='text-white md:text-[30px] text-2xl left-[15%] mx-auto absolute top-3  md:top-24 md:left-[35%] font-extrabold'>WELCOME TO MY PORTFOLIO</h1>
-                <div className='absolute lg:top-2 top-6 left-4 md:left-[24%] lg:left-[28%]' ref={homeref}>
-                    <img src={require('../Prince-removebg-preview.png')} alt="" className='lg:h-[500px] lg:w-[450px] md:h-[400px] md:w-[300px] sm:h-96 sm:w-96 h-72 w-72 brightness-75  contrast-200' />
+                <div className='absolute lg:top-2 top-6 phone:left-0 phone:top-8 left-4 md:left-[24%] lg:left-[28%]' ref={homeref}>
+                    <img src={require('../Prince-removebg-preview.png')} alt="" className='lg:h-[500px] lg:w-[450px] md:h-[400px] md:w-[300px] sm:h-96 sm:w-96
+                     h-72 w-72 phone:h-60 phone:w-60 bigphone:h-64 bigphone:w-64 brightness-75  contrast-200' />
                 </div>
                 <a href={resumeLink} target="_blank" rel="noopener noreferrer">
 
@@ -160,7 +166,9 @@ export default function Home() {
                     </h1>
                 </div>
 
-                <div className='absolute lg:top-32 top-12 left-0 lg:left-6 space-y-32 lg:space-y-10 hidden group-hover:block transition-opacity duration-700'>
+                <div className='absolute lg:top-32 top-12 left-0 lg:left-6 space-y-32 lg:space-y-10 
+                hidden group-hover:block transition-opacity duration-700 phone:right-0
+                phone:space-y-3'>
                     {leftCardsData.slice(0, visibleCards.leftCards).map((card, index) => (
                         <Card key={index} image={card.image} content={card.content} link={card.link} />
                     ))}
@@ -172,7 +180,9 @@ export default function Home() {
                     </h1>
                 </div>
 
-                <div className='absolute lg:top-32 lg:right-6 top-12 right-0 space-y-32 lg:space-y-10 group-hover:block hidden transition-opacity duration-700 delay-1000'>
+                <div className='absolute lg:top-32 lg:right-6 top-12 right-0 space-y-32
+                 lg:space-y-10 group-hover:block hidden transition-opacity duration-700
+                  delay-1000 phone:right-0 phone:space-y-2'>
                     {rightCardsData.slice(0, visibleCards.rightCards).map((card, index) => (
                         <Card key={index} image={card.image} content={card.content} link={card.link} />
                     ))}
@@ -183,7 +193,8 @@ export default function Home() {
             {/* Skills section */}
             <div className='relative'>
                 <div>
-                    <img src="https://www.hdwallpapers.in/download/dark_purple_hd_dark_purple-HD.jpg" className=' h-[200vh] sm:h-[170vh] w-[100vw] brightness-75 contrast-125' alt="" />
+                    <img src="https://www.hdwallpapers.in/download/dark_purple_hd_dark_purple-HD.jpg" className=' h-[200vh] sm:h-[170vh] w-[100vw] 
+                    brightness-75 contrast-125' alt="" />
                 </div>
 
                 <div className='bg-black lg:h-80 h-[600px] w-[80%] lg:w-[800px] space-y-8  lg:space-y-6 rounded-3xl flex-col absolute top-4 text-center p-3 left-5  sm:left-[20%] lg:left-52 overflow-hidden'>
@@ -209,7 +220,7 @@ export default function Home() {
                 </div>
 
                 <h1 className='text-3xl ml-60 hidden lg:block font-extrabold my-12 top-80 left-64 absolute  text-white'>Work Experience</h1>
-                <div className='absolute top-[450px] hidden lg:block space-y-8 left-60 ' ref={experienceref}>
+                <div className='absolute top-[450px]  space-y-8 left-60 ' ref={experienceref}>
                     <Workexperience company={"Solitaire Infoyses"} position={"Intern"} time={"June-July,2024"} course={"React JS"} />
                     <Workexperience company={"Solitaire Infoyses"} position={"Intern"} time={"June-July,2024"} course={"Node JS"} />
                     <Workexperience company={"SimpliLearn"} position={"Intern"} time={"Nov-Dec,2023"} course={"MERN STACK"} />
